@@ -27,7 +27,9 @@ defmodule StatWatch.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:postgrex, ">= 0.0.0"},
+      {:ecto, "~> 2.2"}
     ]
   end
 end

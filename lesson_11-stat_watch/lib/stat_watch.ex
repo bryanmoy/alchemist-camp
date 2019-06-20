@@ -1,7 +1,12 @@
 defmodule StatWatch do
+  alias StatWatch.Repo
+  alias StatWatch.Profile
+
   def run do
-    fetch_stats()
-    |> save_csv
+    for profile <- Repo.all(Profile) do
+      fetch_stats(profile)
+      |> save_csv(profile.name)
+    end
   end
 
   def column_names() do
